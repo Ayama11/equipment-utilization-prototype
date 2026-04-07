@@ -1,0 +1,74 @@
+# =========================
+# Python cache / build
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# =========================
+# Virtual environments
+# =========================
+equ/
+venv/
+.venv/
+
+# =========================
+# IDE / editor / OS
+# =========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# =========================
+# Local environment files
+# =========================
+.env
+
+# =========================
+# Streamlit local config
+# =========================
+.streamlit/
+
+# =========================
+# Generated outputs
+# =========================
+outputs/*.csv
+outputs/*.jsonl
+outputs/*.mp4
+outputs/*.webm
+outputs/*.avi
+outputs/*.png
+outputs/*.jpg
+outputs/*.jpeg
+
+# Keep one final demo video 
+!outputs/verified_boxes_fin_web.mp4
+
+
+
+
+# =========================
+# Large data files
+# =========================
+data/raw/
+data/temp/
+data/intermediate/
+
+# Keep your test clip if it is required for evaluation
+!data/clips/
+!data/clips/test_clip.mp4
+!data/excavator_boxes.csv
+
+# =========================
+# PostgreSQL / Docker local data
+# =========================
+postgres_data/
+*.log
+
+# =========================
+# Notebook checkpoints
+# =========================
+.ipynb_checkpoints/
