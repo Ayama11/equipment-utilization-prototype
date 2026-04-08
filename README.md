@@ -250,4 +250,4 @@ streamlit run src/ui/app.py
 
 - **Technical Report:** (<(https://drive.google.com/file/d/1ZmLOTIyL_D6pXZLx0RzxEC_LLjvGT7RH/view?usp=drive_link)>)
 - **LinkedIn:** (<(https://www.linkedin.com/in/aya-almalla)>)
-- **Vido Test:** (<(https://drive.google.com/drive/folders/1qymAs6GoiknBtbWYOV4UR3T_0t0jAhVy)>)
+- **Vido Test:** (<(https://drive.google.com/drive/folders/1qymAs6GoiknBtbWYOV4UR3T_0t0jAhVy )>)
