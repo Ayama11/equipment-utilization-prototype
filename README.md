@@ -43,7 +43,7 @@ This improved the detector’s fit to the actual excavator scene used in the fin
 The training process was implemented in a separate notebook, and the resulting weights and outputs were saved to Google Drive.
 
 🔗 **Training notebook:**  
-`<(https://colab.research.google.com/drive/1CDbFVZoZUHxPh97gNYzyS_HaOpCfRrly)>`
+`<https://colab.research.google.com/drive/1CDbFVZoZUHxPh97gNYzyS_HaOpCfRrly>`
 
 ### Important Note
 This repository focuses on the **post-detection pipeline**. It starts from available detection results (bounding-box data), then performs:
@@ -78,7 +78,8 @@ Streamlit Dashboard
 ```
 
 ## ⚙️ Core Pipeline
-1) Tracking
+
+# 1) Tracking
 
 The system links detections across frames and assigns a persistent track_id to the excavator.
 
@@ -86,33 +87,29 @@ File:
 src/tracking/build_tracks.py
 
 Matching is based on:
-
 *IoU
 *center distance
 *size consistency
 
-2) Utilization Analysis
+# 2) Utilization Analysis
 
 The tracked machine is analyzed to determine whether it is:
-
-ACTIVE
-INACTIVE
+*ACTIVE
+*INACTIVE
 
 File:
 src/cv/build_tracked_activity_timeline.py
 
 This stage uses:
+* optical flow,
+* region-based motion analysis,
+* smoothing,
+* hysteresis,
+* cleanup of short noisy runs.
 
-optical flow,
-region-based motion analysis,
-smoothing,
-hysteresis,
-cleanup of short noisy runs.
-
-3) Articulated Motion Handling
+# 3) Articulated Motion Handling
 
 A major challenge in excavator monitoring is that the arm may be moving while the lower body remains almost stationary.
-
 To handle this, the machine ROI is divided into motion-sensitive regions such as:
 
 body / base region
@@ -122,13 +119,13 @@ dumping hint region
 
 This allows the system to distinguish:
 
-arm_only
-full_machine
-no_significant_motion
+* arm_only
+* full_machine
+* no_significant_motion
 
 As a result, the excavator is not incorrectly marked as idle when only the arm is active.
 
-4) Activity Classification
+# 4) Activity Classification
 
 The system classifies the current activity into:
 
@@ -137,25 +134,20 @@ SWINGING_LOADING
 DUMPING
 WAITING
 
-The classification is heuristic-based and depends on:
 
-motion intensity,
-motion distribution across selected regions,
-smoothing,
-rule-based cleanup.
-5) Time Analytics
+# 5) Time Analytics
 
 The system computes:
 
-total tracked time,
-total active time,
-total idle time,
-utilization percentage.
+* total tracked time,
+* total active time,
+* total idle time,
+* utilization percentage.
 
 File:
 src/cv/tracked_equipment_events.py
 
-6) Session Extraction
+# 6) Session Extraction
 
 The repository also includes extraction of:
 
@@ -164,6 +156,7 @@ activity sessions.
 
 File:
 src/processing/build_tracked_sessions.py
+
 
 ##📡 Event Streaming and Storage
 
@@ -184,7 +177,7 @@ File:
 src/db/postgres_consumer.py
 
 ##📁 Repository Structure
-
+```text
 equipment-utilization-prototype/
 ├── data/
 │   ├── clips/
@@ -214,7 +207,7 @@ equipment-utilization-prototype/
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
-
+```
 
 # 🚀 Download & Run the Project
 
