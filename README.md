@@ -158,7 +158,7 @@ File:
 src/processing/build_tracked_sessions.py
 
 
-##📡 Event Streaming and Storage
+# 📡 Event Streaming and Storage
 
 Kafka
 
@@ -176,7 +176,7 @@ Kafka events are consumed and stored in PostgreSQL.
 File:
 src/db/postgres_consumer.py
 
-##📁 Repository Structure
+# 📁 Repository Structure
 ```text
 equipment-utilization-prototype/
 ├── data/
@@ -248,5 +248,5 @@ streamlit run src/ui/app.py
 
 ## 📎 Additional Links
 
-- **Technical Report:** [View Report](<(https://drive.google.com/file/d/1ZmLOTIyL_D6pXZLx0RzxEC_LLjvGT7RH/view?usp=drive_link)>)
-- **LinkedIn:** [Aya Almalla](<(https://www.linkedin.com/in/aya-almalla)>)
+- **Technical Report:** (<(https://drive.google.com/file/d/1ZmLOTIyL_D6pXZLx0RzxEC_LLjvGT7RH/view?usp=drive_link)>)
+- **LinkedIn:** (<(https://www.linkedin.com/in/aya-almalla)>)
